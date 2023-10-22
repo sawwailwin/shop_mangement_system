@@ -16,4 +16,6 @@ public interface ItemService {
 
     public void deleteItemById(long itemID);
 
+    public Item fetchItemByName(String itemName);
+
 }

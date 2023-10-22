@@ -49,4 +49,9 @@ public class ItemServiceImp implements ItemService {
         itemRepository.deleteById(itemID);
     }
 
+    @Override
+    public Item fetchItemByName(String itemName) {
+        return itemRepository.findByItemName(itemName);
+    }
+
 }

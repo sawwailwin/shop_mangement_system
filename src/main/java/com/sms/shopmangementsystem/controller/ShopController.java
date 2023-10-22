@@ -40,6 +40,11 @@ public class ShopController {
         return itemService.fetchItemById(itemID);
     }
 
+    @GetMapping("/items/name/{name}")
+    public Item fetchDepartmentByName(@PathVariable("name") String itemName) {
+        return itemService.fetchItemByName(itemName);
+    }
+
     @PutMapping("/items/{id}")
     public Item updateItem(@PathVariable("id") long itemID, @RequestBody Item item) {
         return itemService.updateItem(itemID, item);
@@ -47,6 +52,7 @@ public class ShopController {
 
     @DeleteMapping("items/{id}")
     public void deleteItemById(@PathVariable("id") long itemID) {
+        System.out.println("Successfully Deleted");
         itemService.deleteItemById(itemID);
     }
 
